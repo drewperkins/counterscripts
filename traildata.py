@@ -19,10 +19,8 @@ counts = []
 timestamps = []
 counter1 = json_data['CounterData']['TrailCounter_1']
 for k,v in counter1.items():
-    print('Time: ' + v['ts'])
     timestamps.append(parser.parse(v['ts']))
     counts.append(v['Count'])
-    print('Count: ' + v['Count'])
 
 plt.plot(timestamps, counts, 'ro')
 plt.ylabel('some numbers')
